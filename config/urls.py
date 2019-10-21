@@ -20,5 +20,5 @@ from notes import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.notes_view, name="all_notes"),
-    path('lists/<id>/', views.notes_detail, name="notes_detail"),
+    path('notes/<id>/', views.notes_detail, name="notes_detail"),
 ]
