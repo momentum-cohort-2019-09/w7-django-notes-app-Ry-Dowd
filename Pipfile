@@ -8,6 +8,8 @@ pylint = "*"
 
 [packages]
 django = "*"
+markdownify = "*"
+django-markdownify = "*"
 
 [requires]
 python_version = "3.7"

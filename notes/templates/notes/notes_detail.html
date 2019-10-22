@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{ note.title }} | Details</title>
-</head>
-<body>
-  <h1>{{ note.title }}</h1>
+{% extends 'notes/base.html' %}
+{% load markdownify %}
+
+{% block title %}{{ note.title }} | Details{% endblock %}
+
+{% block content %}
+  <h3>{{ note.title }}</h3>
   <div class="">
-    {{ note.body }}
+    {{ note.body|markdownify }}
   </div>
   <div class="">
     <a href='/'>Return</a>
   </div>
-</body>
-</html>
+{% endblock %}
