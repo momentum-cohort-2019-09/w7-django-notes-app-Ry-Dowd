@@ -7,8 +7,8 @@ def notes_view(request):
     "notes": NOTES,
   })
   
-def notes_detail(request, id):
-  note = NOTES[id]
+def notes_detail(request, pk):
+  note = NOTES[str(pk)]
   return render(request, "notes/notes_detail.html", {
     "note" : note
   })
