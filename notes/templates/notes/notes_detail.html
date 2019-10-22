@@ -5,7 +5,12 @@
 
 {% block content %}
   <h3>{{ note.title }}</h3>
-  <div class="">
+  <div class="note">
     {{ note.content|markdownify }}
+  </div>
+  <div class="comments">
+    {% for comment in note.comments.all %}
+      <div class="comment">{{ comment.content|markdownify }}</div>
+    {% endfor %}
   </div>
 {% endblock %}
