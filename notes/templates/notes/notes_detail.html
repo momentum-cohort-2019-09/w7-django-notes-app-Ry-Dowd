@@ -10,7 +10,7 @@
   </div>
   <div class="comments">
     {% for comment in note.comments.all %}
-      <div class="comment">{{ comment.content|markdownify }}</div>
+      <div class="comment">{{ comment.content|linebreaks|markdownify }}</div>
     {% endfor %}
   </div>
 {% endblock %}

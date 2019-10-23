@@ -8,4 +8,7 @@
       <li><a href= "/notes/{{ note.pk }}">{{ note.title }}</a></li>
     {% endfor %}
   </ul>
+  <div>
+    <span class = "new-note-span"><a href='/notes/new/'>+ Make a new note</a></span>
+  </div>
 {% endblock %}
