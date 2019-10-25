@@ -15,9 +15,10 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class NoteSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = Note
-    fields = ['url', 'title', 'content']
+    fields = ['url', 'title', 'content', 'created', 'updated']
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = Comment
     fields = ['url', 'content', 'note']
+    

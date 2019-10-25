@@ -30,5 +30,5 @@ urlpatterns = [
     path('index/', views.notes_view, name="all_notes"),
     path('notespage/<int:pk>/', views.notes_detail, name="notes_detail"),
     path('notespage/new/', views.notes_create, name='create_note'),
-    path('api_auth', include('rest_framework.urls'), namespace = 'rest_framework')
+    path('api_auth', include('rest_framework.urls'), name = 'rest_framework')
 ]

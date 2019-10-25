@@ -5,10 +5,10 @@
   <h1>Have some Notes!</h1>
   <ul>
     {% for note in notes %}
-      <li><a href= "/notes/{{ note.pk }}">{{ note.title }}</a></li>
+      <li><a href= "/notespage/{{ note.pk }}">{{ note.title }}</a></li>
     {% endfor %}
   </ul>
   <div>
-    <span class = "new-note-span"><a href='/notes/new/'>+ Make a new note</a></span>
+    <span class = "new-note-span"><a href='/notespage/new/'>+ Make a new note</a></span>
   </div>
 {% endblock %}

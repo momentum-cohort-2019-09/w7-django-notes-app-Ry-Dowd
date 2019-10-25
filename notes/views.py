@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
-from notes.models import Note
+from notes.models import Note, Comment
 from notes.forms import NoteForm
 from rest_framework import viewsets
 from notes.serializers import UserSerializer, GroupSerializer, NoteSerializer, CommentSerializer
@@ -39,9 +39,10 @@ class GroupViewSet(viewsets.ModelViewSet):
   serializer_class = GroupSerializer
   
 class NoteViewSet(viewsets.ModelViewSet):
-  queryset = Note.objects.all().order_by('updated')
+  queryset = Note.objects.all().order_by('created')
   serializer_class = NoteSerializer
 
 class CommentViewSet(viewsets.ModelViewSet):
   queryset = Comment.objects.all().order_by('note')
   serializer_class = CommentSerializer
+  
