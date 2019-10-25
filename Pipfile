@@ -11,6 +11,9 @@ black = "*"
 django = "*"
 markdownify = "*"
 django-markdownify = "*"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.7"
