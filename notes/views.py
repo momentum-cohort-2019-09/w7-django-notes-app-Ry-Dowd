@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
 from notes.models import Note, Comment
 from notes.forms import NoteForm
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from notes.serializers import UserSerializer, GroupSerializer, NoteSerializer, CommentSerializer
 
 # Create your views here.
@@ -41,6 +41,10 @@ class GroupViewSet(viewsets.ModelViewSet):
 class NoteViewSet(viewsets.ModelViewSet):
   queryset = Note.objects.all().order_by('created')
   serializer_class = NoteSerializer
+  permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+  
+  def perform_create(self, serializer):
+    serializer.save(owner = self.request.user)
 
 class CommentViewSet(viewsets.ModelViewSet):
   queryset = Comment.objects.all().order_by('note')
